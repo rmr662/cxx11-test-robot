@@ -12,13 +12,14 @@ namespace rmr {
 	Loader::Loader(Joystick *controller)
 		:m_motor(new InvertableJaguar(3, false))
 	{
-		setSpeedDelegate( [controller] () {
+		auto delegate = [controller] () {
 			float speed = controller->GetRawAxis(3);
 			if (speed < 0.0) {
 				speed = -speed;
 			}
 			return speed;
-		} );
+		};
+		setSpeedDelegate(delegate);
 	}
 
 	Loader::~Loader() {
