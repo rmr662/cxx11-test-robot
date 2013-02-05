@@ -1,6 +1,7 @@
 #include "RMRRobot.h"
 #include "RMRDrive.h"
 #include "RMRLoader.h"
+#include "RMRPneumatic.h"
 #include <iostream>
 
 #define JOYSTICK_PORT (3)
@@ -17,8 +18,10 @@ RMRRobot::RMRRobot()
 {
 	rmr::Drive *driveComponent = new rmr::Drive(&m_controller, 2, 4);
 	rmr::Loader *loaderComponent = new rmr::Loader(&m_controller);
+	rmr::Pneumatic *pneumaticComponent = new rmr::Pneumatic();
 	m_components.push_back(driveComponent);
 	m_components.push_back(loaderComponent);
+	m_components.push_back(pneumaticComponent);
 }
 
 RMRRobot::~RMRRobot()
