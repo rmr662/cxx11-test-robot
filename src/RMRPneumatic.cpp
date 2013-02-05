@@ -1,7 +1,7 @@
 #include "RMRPneumatic.h"
 
 #define RELAY_PORT (1)
-#define CUTOFF_PORT (10)
+#define CUTOFF_PORT (5)
 #define SWITCH_PORT (6)
 
 namespace rmr {
