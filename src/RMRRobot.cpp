@@ -29,7 +29,15 @@ RMRRobot::~RMRRobot()
 
 }
 
-void RMRRobot::TeleopPeriodic()
+void RMRRobot::TeleopPeriodic() {
+	updateComponents();
+}
+
+void RMRRobot::AutonomousPeriodic() {
+	updateComponents();
+}
+
+void RMRRobot::updateComponents()
 {
 	for (std::vector<rmr::Component*>::iterator it = m_components.begin(); it != m_components.end(); ++it) {
 		(*it)->update();
