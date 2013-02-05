@@ -4,7 +4,7 @@
 
 namespace rmr {
 	Drive::Drive(Joystick *controller, int speedAxis, int turnAxis)
-		:m_leftController(new Jaguar(1)), m_rightController(new InvertableJaguar(2, true))
+		:m_leftController(new InvertableJaguar(1, true)), m_rightController(new InvertableJaguar(2, false))
 	{
 		m_robotDrive = new RobotDrive(*m_leftController, *m_rightController);
 		setJoystickDelegate(controller, speedAxis, turnAxis);
